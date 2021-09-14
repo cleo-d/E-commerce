@@ -40,6 +40,21 @@ var getJSONData = function(url){
     });
 }
 
+function mostrarUsuario() {
+
+  let nombreusuario = localStorage.getItem("Usuario") ;
+
+  let htmlContentToAppend = `<a class="py-2 d-none d-md-inline-block" href="my-profile.html">${nombreusuario}</a>` ;
+
+  nombreusuario !== null
+
+document.getElementById("nav").innerHTML += htmlContentToAppend;
+
+}
+
+
+mostrarUsuario()
+
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.

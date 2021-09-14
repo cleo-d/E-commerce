@@ -41,7 +41,7 @@
 
 <body class="text-center">
 
-  <form class="form-signin" action = "Home.html">
+  <form class="form-signin" >
     <div class="form">
     <img >
     <h1>Please sign in</h1>
@@ -52,14 +52,9 @@
     <br>
     <label for="inputPassword" class="sr-only">Password</label>
     <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <div>
-      <label>
-          <br>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
+    
     <br>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" >Sign in</button>
+    <button class="btn btn-lg btn-primary btn-block" id = "bottonlogin" type="button" onclick = login() >Sign in</button>
 
     </div>
 
