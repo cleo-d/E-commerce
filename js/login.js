@@ -13,8 +13,8 @@ function login() {
   let password = document.getElementById("inputPassword").value
 
   localStorage.setItem("Usuario", UsuarioInput)
-
-  if ((UsuarioInput !== "" ) && (password !== "" ) ) {
+    console.log("prueba")
+  if (((UsuarioInput !== "" ) && (UsuarioInput.includes("@")) ) && (password !== "" ) ) {
     
     location.href = "Home.html"
     } 

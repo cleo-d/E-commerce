@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         minCount = undefined;
         maxCount = undefined;
 
-        sortAndShowProductsList();
+        showProductList();
     });
 
     document.getElementById("rangeFilterCount").addEventListener("click", function () {

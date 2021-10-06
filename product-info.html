@@ -17,12 +17,11 @@
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between" id = "nav">
+    <div class="container d-flex flex-column flex-md-row justify-content-between" id="nav">
       <a class="py-2 d-none d-md-inline-block" href="Home.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
     </div>
   </nav>
   <div class="text-center p-5">
@@ -31,9 +30,76 @@
     <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
       seleccionado previamente, siempre se visualizará el presente: <strong>Chevrolet Onyx Joy</strong>.</p>
   </div>
-  <div id = "product-info">
+  <div id="product-info">
+    </div>
+    <div class= "container">
+    <div id="carouselAutos" class="carousel slide" data-ride="carousel">
+      <div id="carrusel" class="carousel-inner">
+      
+      </div>
+      <a class="carousel-control-prev" href="#carouselAutos" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselAutos" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    </div>
+
   
-</div>
+  <br>
+  <div id= "productos_relacionados">
+    <div class="container mt-5 p-3">
+      <h2>Productos Relacionados</h2>
+      <div id="prod_rel" class="row container mt-5 shadow-lg p-3 bg-light">
+
+
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="container px-4">
+    <div class="row gx-5">
+      <div class="col-md-6">
+        <div id="comentarios">
+
+        </div>
+
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+          <br>
+          <div class="btn-group" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Puntuacion
+            </button>
+            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+              <a class="dropdown-item" href="#!">1</a>
+              <a class="dropdown-item" href="#!">2</a>
+              <a class="dropdown-item" href="#!">3</a>
+              <a class="dropdown-item" href="#!">4</a>
+              <a class="dropdown-item" href="#!">5</a>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-primary">Comentar</button>
+              <br>
+              
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container mt-5">
+    <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+  </div>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -55,7 +121,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
-  <script src="js/extra.js" ></script>
+  <script src="js/extra.js"></script>
 </body>
 
 </html>
