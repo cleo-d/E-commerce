@@ -140,3 +140,13 @@ a.custom-card:hover {
   color: orange;
 }
 
+#cantidad {
+  height: 30px;
+  width: 80px;
+}
+
+#img_carrito {
+  height: 160px;
+  width: 160px;
+}
+

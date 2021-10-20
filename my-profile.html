@@ -43,12 +43,42 @@
     </div>
   </nav>
   <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+    <h4>Mi Perfil</h4>
+    <br>
+    <div class="row">
+      <div class="col-6">
+        <label>Nombre/s</label>
+        <input type="text" class="form-control" id="nombre" placeholder="" >
+       
+      </div>
+      <div class="col-6">
+          <label>Apellido/s</label>
+          <input type="text" class="form-control" id="apellido" placeholder="" >
+
+        </div>
+        <br>
+        <div class="col-6 ">
+          <label>Edad</label>
+          <input type="text" class="form-control" id="edad" placeholder="" >
+       
+        </div>
+        <div class="col-6">
+          <label>Email</label>
+          <input type="text" class="form-control" id="email" placeholder="" >
+       
+        </div>
+
+        <div class="col-6">
+          <label>Telefono</label>
+          <input type="text" class="form-control" id="telefono" placeholder="" >
+       
+        </div>
+        
+
     </div>
+    <br>
+    <button type="button" class="btn btn-success col-4" onclick="setearUsuario()">Guardar Datos</button>
+    
   </div>
   <footer class="text-muted bg-light">
     <div class="container">
