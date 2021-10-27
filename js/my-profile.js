@@ -1,37 +1,42 @@
-let datos = { }
- 
+let datos = {}
 
 
-function setearUsuario(){
+
+function setearUsuario() {
 
     datos = {
 
-        Nombre :  document.getElementById("nombre").value ,
-        Apellido : document.getElementById("apellido").value ,
-        Edad : document.getElementById("edad").value ,
-        Email : document.getElementById("email").value ,
-        Telefono : document.getElementById("telefono").value ,
-        
-       }
+        Nombre: document.getElementById("nombre").value,
+        Apellido: document.getElementById("apellido").value,
+        Edad: document.getElementById("edad").value,
+        Email: document.getElementById("email").value,
+        Telefono: document.getElementById("telefono").value,
+
+    }
 
     localStorage.setItem("perfil", JSON.stringify(datos))
 
-    let datoslocalstorage = JSON.parse(localStorage.getItem("perfil")) 
+    let datoslocalstorage = JSON.parse(localStorage.getItem("perfil"))
 
     localStorage.setItem("perfil", JSON.stringify(datos));
 
     console.log(datoslocalstorage.Nombre)
+
+}
+
+function getUsuario() {
+
+    datos = JSON.parse(localStorage.getItem("perfil"))
+
+    document.getElementById("nombre").value = datos.Nombre 
+    document.getElementById("apellido").value = datos.Apellido
+    document.getElementById("edad").value = datos.Edad
+    document.getElementById("email").value = datos.Email
+    document.getElementById("telefono").value = datos.Telefono
+
+}
+
  
-}
-
-function getUsuario(){
-
-    localStorage.getItem("perfil", JSON.stringify(datos))
-    localStorage.setItem("perfil", JSON.stringify(datos))
-
-}
-
-
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
