@@ -43,24 +43,20 @@ function showProductList() {
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))) {
-
+                
             htmlContentToAppend += `
-            <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail" >
-                </div>
-                <div class="col">
-                    <div class="d-flex w-100 justify-content-between">
-                        <h4 class="mb-1">`+ product.name + `</h4>
-                        <small class="text-muted">` + product.soldCount + ` artículos 
-                        <br> ${product.currency} ${product.cost} 
-                        <br> ${product.soldCount} Sold </small>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+              <img class="bd-placeholder-img card-img-top" src=${product.imgSrc}>
+              <h2 class="m-3"> ${product.name}</h2>
+              <div class="card-body">
+              <p> ${product.description} </p>
+                <p class="card-text"><small class="text-muted">` + product.soldCount + ` artículos 
+                <br> ${product.currency} ${product.cost} 
+                <br> ${product.soldCount} Sold </small></p>
+              </div>
+            </a>
+          </div>
             `
         }
         console.log(htmlContentToAppend)

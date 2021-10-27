@@ -1,7 +1,7 @@
 let datos = {}
 
 
-
+// Funcion que agarra los datos de los inputs
 function setearUsuario() {
 
     datos = {
@@ -24,6 +24,7 @@ function setearUsuario() {
 
 }
 
+// Funcion que va a buscar informacion del perfil de el local storage
 function getUsuario() {
 
     datos = JSON.parse(localStorage.getItem("perfil"))
