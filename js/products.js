@@ -43,12 +43,12 @@ function showProductList() {
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))) {
-                
+
             htmlContentToAppend += `
             <div class="col-lg-4 col-md-6 col-sm-12">
             <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
               <img class="bd-placeholder-img card-img-top" src=${product.imgSrc}>
-              <h2 class="m-3"> ${product.name}</h2>
+              <h2 id="prodName" class="m-3"> ${product.name}</h2>
               <div class="card-body">
               <p> ${product.description} </p>
                 <p class="card-text"><small class="text-muted">` + product.soldCount + ` artículos 
@@ -59,11 +59,35 @@ function showProductList() {
           </div>
             `
         }
-        console.log(htmlContentToAppend)
 
         document.getElementById("product_list").innerHTML = htmlContentToAppend;
     }
 }
+
+function searchBar() {
+
+    var input = document.getElementById("searchbar").value;
+
+    input = input.toLowerCase();
+
+    var x = document.getElementsByClassName("col-lg-4 col-md-6 col-sm-12");
+    console.log(x)
+
+
+    for (i = 0; i < x.length; i++ ) {
+
+        if (x[i].innerHTML.toLowerCase().includes(input)) {
+
+            x[i].style.display = "item"
+
+        } else {
+            x[i].style.display = "none";
+        }
+    }
+
+}
+
+
 
 function sortAndShowProducts(sortCriteria, ProductsArray) {
     currentSortCriteria = sortCriteria;

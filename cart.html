@@ -11,6 +11,7 @@
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
 
   <style>
     .bd-placeholder-img {
@@ -35,7 +36,7 @@
 
 <body>
   <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between" id = "nav">
+    <div class="container d-flex flex-column flex-md-row justify-content-between" id="nav">
       <a class="py-2 d-none d-md-inline-block" href="Home.html">Inicio</a>
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
@@ -46,104 +47,210 @@
     <h3 class="text-center">Carrito de Compras</h3>
     <br>
     <h4>Articulos:</h4>
-    <table id ="carrito" class="table table-hover">
+    <table id="carrito" class="table table-hover">
       <thead class="thead-dark">
         <tr>
-            <th scope="col"></th>
-            <th scope="col">Nombre</th>
-            <th scope="col">Precio</th>
-            <th scope="col">Cantidad</th>
-            <th scope="col">Subtotal</th>
-            <tbody id="table-body">
-              <td colspan="4" class="text-right" scope="row">Total:</td>
-              <td colspan="" scope="row" class="allign-middle" id="totales"> </td>
-            </tbody>
-        </tr>
+          <th scope="col"></th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">Subtotal</th>
+      <tbody id="table-body">
+        <td colspan="4" class="text-right" scope="row">Total:</td>
+        <td colspan="" scope="row" class="allign-middle" id="totales"> </td>
+      </tbody>
+      </tr>
       </thead>
     </table>
-      
-      <hr class="mb-4">
-      <h5 class="mb-3">Direccion</h5>
-      <div class="row">
-        <div class="col-md-3 mb-3">
+
+    <hr class="mb-4">
+    <h5 class="mb-3">Direccion</h5>
+    <div class="row">
+      <div class="col-md-3 mb-3">
+        <form>
           <label>Calle</label>
-          <input type="text" class="form-control" id="calle_direccion" placeholder="Calle" required="" >
+          <input type="text" class="form-control" id="calle_direccion" placeholder="Calle" required="">
           <div class="invalid-feedback">
-            Debe ingrear una calle
-          </div>
-        </div>
-        <div class="col-md-4 mb-3">
-            <label>Numero</label>
-            <input type="text" class="form-control" id="numero_direccion" placeholder="Numero" required="">
-          <div class="invalid-feedback">
-            Debe ingrear una calle
-          </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label>Esquina</label>
-            <input type="text" class="form-control" id="esquina_direccion" placeholder="Esquina" required="">
-          <div class="invalid-feedback">
-            Debe ingrear una esquina
-          </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <label>Pais</label>
-            <input type="text" class="form-control" id="pais_direccion" placeholder="Pais" required="">
-          <div class="invalid-feedback">
-            Debe ingrear un Pais
-          </div>
+            Debe ingresar una calle
           </div>
       </div>
-      <hr class="mb-4">
-      <h5 class="mb-3">Tipo de Envio</h5>
-      <div class="d-block my-3">
-        <div class="custom-control custom-radio">
-          <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
-          <label class="custom-control-label" for="goldradio">Premium</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
-          <label class="custom-control-label" for="premiumradio">Express</label>
-        </div>
-        <div class="custom-control custom-radio">
-          <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
-          <label class="custom-control-label" for="standardradio">Estándar</label>
-        </div>
-        <div class="row">
-          <button type="button" class="m-1 btn btn-link" onclick="dataEnvios()">Ver condiciones</button>
+      <div class="col-md-4 mb-3">
+        <label>Numero</label>
+        <input type="text" class="form-control" id="numero_direccion" placeholder="Numero" required="">
+        <div class="invalid-feedback">
+          Debe ingresar una calle
         </div>
       </div>
-      <hr class="mb-4">
-      <h5 class="mb-3">Costos</h5>
-      <ul class="list-group mb-3">
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Subtotal</h6>
-            <small class="text-muted">Suma de productos seleccionados</small>
-          </div>
-          <span class="text-muted" id="productCostText"></span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between lh-condensed">
-          <div>
-            <h6 class="my-0">Envio</h6>
-            <small class="text-muted">Según el tipo de envio seleccionado</small>
-          </div>
-          <span class="text-muted" id="comissionText">$$$$$</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between">
-          <span>Total ($)</span>
-          <strong id="totalCostText">$$$$$</strong>
-        </li>
-      </ul>
-      <br>
-      <button class="btn btn-primary btn-lg float-right" type="submit">Hacer Pedido</button>
+      <div class="col-md-4 mb-3">
+        <label>Esquina</label>
+        <input type="text" class="form-control" id="esquina_direccion" placeholder="Esquina" required="">
+        <div class="invalid-feedback">
+          Debe ingresar una esquina
+        </div>
       </div>
+      <div class="col-md-4 mb-3">
+        <label>Pais</label>
+        <input type="text" class="form-control" id="pais_direccion" placeholder="Pais" required="">
+        <div class="invalid-feedback">
+          Debe ingrear un Pais
+        </div>
+      </div>
+      </form>
+    </div>
+    <hr class="mb-4">
+    <h5 class="mb-3">Tipo de Envio</h5>
+    <div class="d-block my-3">
+      <div class="custom-control custom-radio">
+        <input id="premiumradio" name="tipoDeEnvio" type="radio" class="custom-control-input"
+          onchange="totalDeLosSubtotales(dataCarrito)" value="gold" checked="" required="">
+        <label class="custom-control-label" for="premiumradio">Premium</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="expressradio" name="tipoDeEnvio" type="radio" onchange="totalDeLosSubtotales(dataCarrito)"
+          class="custom-control-input" value="Express" required="">
+        <label class="custom-control-label" for="expressradio">Express</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="standardradio" name="tipoDeEnvio" type="radio" onchange="totalDeLosSubtotales(dataCarrito)"
+          class="custom-control-input" value="standard" required="">
+        <label class="custom-control-label" for="standardradio">Estándar</label>
+      </div>
+      <div class="row">
+        <button type="button" class="m-1 btn btn-link" onclick="dataEnvios()">Ver condiciones</button>
+      </div>
+    </div>
+    <hr class="mb-4">
+    <h5 class="mb-3">Forma de Pago</h5>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+      Metodo de Pago
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Metodo de Pago</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Modal Body-->
+            <div class="col mx-auto">
+              <div class="card ">
+                <div class="card-header">
+                  <div class="bg-white shadow-sm pt-4 pl-2 pr-2 pb-2">
+                    <!-- Credit card form tabs -->
+                    <ul role="tablist" class="nav bg-light nav-pills rounded nav-fill mb-3">
+                      <li class="nav-item"> <a data-toggle="pill" href="#credit-card" class="nav-link active "> <i
+                            class="fas fa-credit-card mr-2"></i> Credito/Debito </a> </li>
+                      <li class="nav-item"> <a data-toggle="pill" href="#net-banking" class="nav-link "> <i
+                            class="fas fa-mobile-alt mr-2"></i> Transferencia </a> </li>
+                    </ul>
+                  </div> <!-- End -->
+                  <!-- Credit card form content -->
+                  <div class="tab-content">
+                    <!-- credit card info-->
+                    <div id="credit-card" class="tab-pane fade show active pt-3">
+                      <form role="form" onsubmit="">
+                        <div class="form-group"> <label for="username">
+                            <h6>Nombre en la Tarjeta</h6>
+                          </label> <input id="nombre_tarjeta" type="text" name="username" placeholder="Nombre" required
+                            class="form-control "> </div>
+                        <div class="form-group"> <label for="cardNumber">
+                            <h6>Numero de Tarjeta</h6>
+                          </label>
+                          <div class="input-group"> <input id="numero_tarjeta" type="text" name="cardNumber"
+                              placeholder="Numero" class="form-control " required>
+                            <div class="input-group-append"> <span class="input-group-text text-muted"> <i
+                                  class="fab fa-cc-visa mx-1"></i> <i class="fab fa-cc-mastercard mx-1"></i> <i
+                                  class="fab fa-cc-amex mx-1"></i> </span> </div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-sm-8">
+                            <div class="form-group"> <label><span class="hidden-xs">
+                                  <h6>Fecha de Expiracion</h6>
+                                </span></label>
+                              <div class="input-group"> <input id="venc_mes" type="number" placeholder="MM" name=""
+                                  class="form-control" required> <input id="venc_año" type="number" placeholder="AA"
+                                  name="" class="form-control" required> </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-4">
+                            <div class="form-group mb-4"> <label data-toggle="tooltip"
+                                title="Three digit CV code on the back of your card">
+                                <h6>CVV <i class="fa fa-question-circle d-inline"></i></h6>
+                              </label> <input id="cvv" type="text" required class="form-control"> </div>
+                          </div>
+                        </div>
+                        <div class="card-footer"> <button type="button"
+                            class="subscribe btn btn-info btn-block shadow-sm" onclick="validarTarjeta()"> Verificar Tarjeta
+                          </button>
+                      </form>
+                    </div>
+                  </div> <!-- End -->
+                  <!-- bank transfer info -->
+                  <div id="net-banking" class="tab-pane fade pt-3">
+                    <div class="form-group "> <label for="Select Your Bank">
+                        <h6>Seleccione su Banco</h6>
+                      </label> <select class="form-control" id="ccmonth">
+                        <option value="" selected disabled>--Por favor seleccione su banco--</option>
+                        <option>Banco 1</option>
+                        <option>Banco 2</option>
+
+                      </select> </div>
+                    <div class="form-group">
+                      <p> <button type="submit" class="btn btn-primary "><i class="fas fa-mobile-alt mr-2"></i>
+                          Seleccionar</button> </p>
+                    </div>
+                    <p class="text-muted">Transacciones hechas directas con el banco dependeran de las politicas de cada uno</p>
+                  </div> <!-- End -->
+                  <!-- End -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success" data-dismiss="modal" onclick="validarTarjeta()">Seleccionar Metodo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="mb-4">
+  <h5 class="mb-3">Costos</h5>
+  <ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+      <div>
+        <h6 class="my-0">Subtotal</h6>
+        <small class="text-muted">Suma de productos seleccionados</small>
+      </div>
+      <span class="text-muted" id="productCostText"></span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between lh-condensed">
+      <div>
+        <h6 class="my-0">Envio</h6>
+        <small class="text-muted">Según el tipo de envio seleccionado</small>
+      </div>
+      <span class="text-muted" id="comissionText">$$$$$</span>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+      <span>Total ($)</span>
+      <strong id="totalCostText">$$$$$</strong>
+    </li>
+  </ul>
+  <br>
+  <button class="btn btn-primary btn-lg float-right" onclick="validarCompra()">Hacer Pedido</button>
+  </div>
 
   <footer class="text-muted">
-        <div class="container">
-            <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-            <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-        </div>
+    <div class="container">
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
   </footer>
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -158,7 +265,7 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
-  <script src="js/extra.js" ></script>
+  <script src="js/extra.js"></script>
 </body>
 
 </html>

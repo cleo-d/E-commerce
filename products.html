@@ -43,7 +43,14 @@
         </div>
       </div>
       <div class="row justify-content-end">
-        <div class="col-md-6"></div>
+        <div class="col-md-6 align-items center">
+          <div class="input-group">
+            <input id="searchbar" type="search" class="form-control" placeholder="Buscar" aria-label="" aria-describedby="basic-addon1" onkeyup="searchBar()" onchange="searchBar()">
+            <div class="input-group-append">
+              <button class="btn fa fa-search" type="button"></button>
+            </div>
+          </div>
+        </div>
         <div class="col-md-6 col-sm-12 mb-1 container">
           <div class="row container p-0 m-0">
             <div class="col">
@@ -64,8 +71,8 @@
           </div>
         </div>
       </div>
-
     </div>
+    <br>
     <div class="row" id="product_list">
 
         <div class="list-group" id="cat-list-container">

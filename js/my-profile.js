@@ -16,12 +16,6 @@ function setearUsuario() {
 
     localStorage.setItem("perfil", JSON.stringify(datos))
 
-    let datoslocalstorage = JSON.parse(localStorage.getItem("perfil"))
-
-    localStorage.setItem("perfil", JSON.stringify(datos));
-
-    console.log(datoslocalstorage.Nombre)
-
 }
 
 // Funcion que va a buscar informacion del perfil de el local storage
@@ -37,6 +31,8 @@ function getUsuario() {
 
 }
 
+
+
  
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
@@ -45,4 +41,5 @@ function getUsuario() {
 
 document.addEventListener("DOMContentLoaded", function (e) {
     getUsuario()
+
 });

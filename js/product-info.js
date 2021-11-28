@@ -84,12 +84,9 @@ function showRelatedProducts(product_data, arrayAutos) {
 
     let relacionados = arrayAutos[index];
 
-
     htmlContentToAppend = ""
 
     htmlContentToAppend += `
-    
-    
         <div class="col-3">
             <img src="` + product_data[relacionados].imgSrc + `" alt="` + product_data[relacionados].description + `" class="img-thumbnail" >
         </div>
@@ -104,7 +101,6 @@ function showRelatedProducts(product_data, arrayAutos) {
         </div>
     </div>
     `
-
 
     document.getElementById("prod_rel").innerHTML += htmlContentToAppend
 
@@ -198,7 +194,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
           showProductInfo()
           mostrarFotos()
           showRelatedProducts(product_data, relacionados)
-
         }
 
       })
